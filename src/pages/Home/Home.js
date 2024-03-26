@@ -2,6 +2,7 @@ export class Home{
     constructor(props){
     }
     init(){
+        document.title = "Home"
         return `
         <div>
             <div>Főoldal<div>

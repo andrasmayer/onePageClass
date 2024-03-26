@@ -10,8 +10,11 @@ export class App{
         this.props = props
 
         this.props.nav.innerHTML = new NavBar().init() //Navbar reload at every hash change (for login and auths)
-
-        if( this[this.props.hash] == null){ this.props.hash = "error_404" }
+        
+        if( ["","#"].includes(this.props.hash) ){ this.props.hash = "home" }
+        else if( this[this.props.hash] == null){ this.props.hash = "error_404" }
+         
+        console.log(this.props.hash)
         this[this.props.hash]()
         
     }
