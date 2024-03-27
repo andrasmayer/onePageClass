@@ -1,7 +1,5 @@
 export class About{
-    constructor(props){
-        document.title = "About"
-    }
+    constructor(props){ }
     init(){
         return `
         <div>

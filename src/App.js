@@ -1,36 +1,28 @@
 const {NavBar} = await import(`./Components/NavBar/NavBar.js${app_version}`)
-const {Home} = await import(`./pages/Home/Home.js${app_version}`)
-const {About} = await import(`./pages/About/About.js${app_version}`)
-const {Error_404} = await import(`./pages/Error_404/Error_404.js${app_version}`)
-
-
+const {views} = await import(`./Components/Router/views.js${app_version}`)
+const {ajax} = await import(`./Hooks/ajax/ajax.js${app_version}`)
 
 export class App{
     constructor(props){
         this.props = props
-
-        this.props.nav.innerHTML = new NavBar().init() //Navbar reload at every hash change (for login and auths)
+        this.props.userID = ajax("get", "./server/activeUser/activeUser.php", "json");
         
+        Object.keys(views).forEach(key=>{//dinamicly add views
+            this[key] = views[key].fnc
+        })
+
+
         if( ["","#"].includes(this.props.hash) ){ this.props.hash = "home" }
         else if( this[this.props.hash] == null){ this.props.hash = "error_404" }
-         
-        console.log(this.props.hash)
-        this[this.props.hash]()
-        
-    }
-    init(content){ //content reload at every hash change
-        this.props.content.innerHTML = content.init()
-        content.events()
-    }
 
-    home(){
-        this.init(  new Home() )
-    }
-    about(){
-        this.init(  new About() )
-    }
-    error_404(){
-        this.init(  new Error_404() )
-    }
 
+
+
+        this.props.nav.innerHTML = new NavBar(props).init() //Navbar reload at every hash change (for login and auths)
+        this.view = new this[this.props.hash](props)
+
+        this.props.content.innerHTML = this.view.init()
+        this.view.events()
+    }
+  
 }
