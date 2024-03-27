@@ -1,11 +1,11 @@
 //Nézetek
-const {Home} = await import(`../../Pages/Home/Home.js${app_version}`)
-const {About} = await import(`../../Pages/About/About.js${app_version}`)
+const {Home} = await import(`../../Views/Home/Home.js${app_version}`)
+const {About} = await import(`../../Views/About/About.js${app_version}`)
 
-const {TopicList} = await import(`../../Pages/TopicList/TopicList.js${app_version}`)
-const {OpenTopic} = await import(`../../Pages/OpenTopic/OpenTopic.js${app_version}`)
+const {TopicList} = await import(`../../Views/TopicList/TopicList.js${app_version}`)
+const {OpenTopic} = await import(`../../Views/OpenTopic/OpenTopic.js${app_version}`)
 
-const {Error_404} = await import(`../../Pages/Error_404/Error_404.js${app_version}`)
+const {Error_404} = await import(`../../Views/Error_404/Error_404.js${app_version}`)
 /*
 
 const {MyTasks} = await import(`../../views/MyTasks/MyTasks.js${app_version}`)
