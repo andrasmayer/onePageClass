@@ -19,7 +19,7 @@ const fire = (event, keyCode, Topic) =>{
 
         if(  OBJ.column.includes("addin_") === true ){
             const addinKey = target.classList[0].replace("addin_","")
-            Topic.task[rowID].addin[addinKey] = target.value
+            Topic.task[rowIndex].addin[addinKey] = target.value
             OBJ.column  = "addin";
             OBJ.value   = JSON.stringify(Topic.task[rowIndex].addin);
         }
