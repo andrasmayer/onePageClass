@@ -10,14 +10,19 @@ export const list = (props) => {
 
     const owner =    itm.contributors.includes(JSON.stringify(props.userID) ) === true || props.userID == itm.creator
         ? 
-          `<a class="nav-link fa fa-pencil" style="color:green" href="#editTopic?topicid=${itm.id}"></a>`
+          `<a class="nav-link d-inline fa fa-pencil" style="color:green" href="#editTopic?topicid=${itm.id}"></a>`
         : ""
+
     content += `
-            <a class="nav-link" href="#OpenTopic?topicid=${itm.id}">
-              ${itm.id} <strong>${itm.title}</strong> ${itm.creationDate} ${owner}
-            </a>
+            <div>
+              <a class="nav-link d-inline " href="#OpenTopic?topicid=${itm.id}">
+                ${itm.id} <strong>${itm.title}</strong> ${itm.creationDate} ${owner}
+              </a>
+            </div>
           `
   })
+
+
 
   content = `
         <div class="d-flex justify-content-center">

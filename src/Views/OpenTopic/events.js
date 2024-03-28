@@ -48,7 +48,10 @@ export const events = ( Topic) =>{
             task.addin[key] = ""
         })
         const newTaskId = ajax("post", "./server/editTopic/newTask.php", "json", {task:task,topicid:Topic.id})
-        location.reload()
+        let hash = location.hash.split("&gulf=")[0]
+        hash += `&gulf=${new Date().getTime()}`
+        location.hash = hash
+        //location.reload()
     })
 
     inputSelects.forEach((itm)=>{

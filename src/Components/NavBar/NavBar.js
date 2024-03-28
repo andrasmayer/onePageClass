@@ -6,7 +6,8 @@ export class NavBar{
         let links = ""
         Object.keys(views).forEach((key)=>{
             const activeWindow = key == props.hash ? "active" : ""
-            if( (views[key].login == false || (views[key].login == true && userID != null) ) &&  views[key].hidden != true) {
+            if( (views[key].login == false || 
+                (views[key].login == true && props.userID != null) ) &&  views[key].hidden != true) {
                 links += `
                 <li class="nav-item">
                     <a class="nav-link ${activeWindow}" href="#${key}">${views[key].title}</a>
