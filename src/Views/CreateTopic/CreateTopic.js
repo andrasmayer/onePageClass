@@ -36,16 +36,16 @@ export class CreateTopic{
                     <div class="p-3">
                         <h3>Probléma kategóriák</h3>
                         <div><ul id="categories" class="list-group"></ul></div>
-                        <div>
-                            <input id="newCatName" class="form-control w-50 d-inline"> <button class="btn btn-primary" id="addCat">+</button>
+                        <div class="pt-2">
+                            <input id="newCatName" class="form-control w-50 d-inline"> <button class="btn btn-primary float-end me-3" id="addCat">+</button>
                         </div>
                     </div>
                     <div class="p-3">
                         <h3>Adminisztátorok</h3>
                     <div>
                         <ul id="admins" class="list-group"></ul></div>
-                        <div>
-                            <input id="newAdmin" class="form-control w-50 d-inline"> <button id="addAdmin" class="btn btn-primary">+</button>
+                        <div class="pt-2">
+                            <input id="newAdmin" class="form-control w-50 d-inline"> <button id="addAdmin" class="btn btn-primary float-end me-3">+</button>
                             <div id="userList"></div>
                         </div>
                         <div><ul id="admins" class="list-group"></ul></div>
@@ -53,8 +53,9 @@ export class CreateTopic{
                     <div class="p-3">
                         <h3>Extra fejlécek</h3>
                         <ul id="headerList" class="list-group"></ul>
-                        <input id="newHeader" class="form-control w-50 d-inline"> 
-                        <button id="addHeader" class="btn btn-primary">+</button>
+                        <div class="pt-2">
+                            <input id="newHeader" class="form-control w-50 d-inline"> <button id="addHeader" class="btn btn-primary float-end me-3">+</button>
+                        </div>
                     </div>
                 </div>
                 <div class="createTopicCtn mt-5 text-center">
